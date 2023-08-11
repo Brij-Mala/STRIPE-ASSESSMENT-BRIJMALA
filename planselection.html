@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select your plan </title>
+        <script src="https://js.stripe.com/v3/"></script>
+        <link rel="stylesheet" href="selection.css">
+    </head>
+
+    <body>
+        <div class="part">
+            <button type="submit" id="activeplan" class="activep" onclick="Activeplan()">Your Active Plan</button>
+        </div>
+
+        <div class="part1">
+        <h2 style="text-align: center;" >Choose the right plan for you</h2>
+            <div class="part2">
+            <table class="tabl">
+            <tr  class="row1">
+                <td class="col1">
+                    <div class="contbox">
+                        <div id="butt"></div>
+                        <button type="button" id="monthly"class="bt" onclick="Monthly()" >Monthly</button>
+                        <button type="button" id="yearly" class="bt" onclick="Yearly()">Yearly</button>
+                    </div>
+                    
+                </td>
+                <td ><button type="button" class="heading"> Monthly</button></td>
+                <td ><button type="button" class="heading"> Basic</button></td>
+                <td > <button type="button"class="heading"> Standard</button></td>
+                <td > <button type="button" class="heading"> Premium </button></td>
+            </tr>
+            <tr  class="row2"> 
+                <td class="col1" id="my">Monthly Price</td>
+                <td  id="price1">₹100</td>
+                <td id="price2">₹200</td>
+                <td id="price3">₹500</td>
+                <td id="price4">₹700</td>
+            
+            </tr>
+            <tr class="row3">
+                <td class="col1">Video Quality</td>
+                <td>Good</td>
+                <td>Good</td>
+                <td>Better</td>
+                <td>Best</td>
+            </tr>
+            <tr class="row4">
+                <td class="col1">Resoultion</td>
+                <td>480p</td>
+                <td>480p</td>
+                <td>1080p</td>
+                <td>4K+HDR</td>
+            </tr>
+            <tr class="row5">
+                <td class="col1">Devices you can use to watch</td>
+                <td>Phone</td>
+                <td>Phone</td>
+                <td>Phone</td>
+                <td>Phone</td>
+            </tr>
+            <tr class="row6">
+                <td></td>
+                <td>Tablet</td>
+                <td>Tablet</td>
+                <td>Tablet</td>
+                <td>Tablet</td>
+            </tr>
+            <tr class="row7">
+                <td></td>
+                <td></td>
+                <td>Computer</td>
+                <td>Computer</td>
+                <td>Computer</td>
+            </tr>
+            <tr class="row8">
+                <td></td>
+                <td></td>
+                <td>TV</td>
+                <td>TV</td>
+                <td>TV</td>
+            </tr>
+        </table>
+        <button type="submit" id="next" class="signup">NEXT</button>
+    </div>
+</div>
+    </body>
+
+    <script>
+        var x=document.getElementById("butt");
+        function Yearly(){
+            x.style.left="102px";
+            document.getElementById("my").innerHTML = 'Yearly';
+            document.getElementById("price1").innerHTML = '₹1000';
+            document.getElementById("price2").innerHTML = '₹2000';
+            document.getElementById("price3").innerHTML = '₹5000';
+            document.getElementById("price4").innerHTML = '₹7000';
+            
+        }
+        
+        function Monthly(){
+            x.style.left="0px";
+            document.getElementById("my").innerHTML = 'Monthly';
+            document.getElementById("price1").innerHTML = '₹100';
+            document.getElementById("price2").innerHTML = '₹200';
+            document.getElementById("price3").innerHTML = '₹500';
+            document.getElementById("price4").innerHTML = '₹700';
+            
+        }
+
+        var y = document.getElementById("activeplan");
+        function Activeplan(){
+            window.location.assign("activeplans.html")
+        }
+
+        const buttons = document.querySelectorAll(".heading");
+        buttons.forEach(i=>{
+            i.addEventListener("click",function(){
+                buttons.forEach(y=>{
+                    y.classList.remove("selected");
+                });
+                i.classList.add("selected");
+            });
+        });
+
+
+        var z= document.getElementById("next");
+        z.addEventListener("click",function(){
+            var selectedbt = document.querySelector(".heading.selected");
+            if(selectedbt){
+                const text= selectedbt.textContent;
+                let name="";
+                let cycle="";
+                let price;
+                if(text=="Monthly") {
+                
+                    name="Monthly";
+                    cycle='Monthly';
+                    price=100;
+                }else if(text=="Basic"){
+                    name="Basic";
+                    cycle='Monthly';
+                    price=200;
+                }
+                else if(text=="Standard"){
+                    name="Standard";
+                    cycle='Monthly';
+                    price=500;
+                }
+                else if(text=="Premium"){
+                    name="Premium";
+                    cycle='Monthly';
+                    price=700;
+                }
+                localStorage.setItem("plan-name",name);
+                localStorage.setItem("plan-cycle",cycle);
+                localStorage.setItem("plan-price",price);
+                console.log(name ,price,cycle);
+                window.location.href="confirmpayment.html";
+          
+            } 
+            
+        });
+    
+
+    </script>
+</html>

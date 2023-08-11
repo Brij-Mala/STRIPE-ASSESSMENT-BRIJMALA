@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(73, 73, 246);
+   
+}
+
+.createaccount{
+    justify-content: center;
+    margin-top: 7%;
+    width: 350px;
+    padding:2%;
+    color: black;
+    background-color: aliceblue;
+    border-radius: 10px;
+
+}
+.inputing{
+    margin-top: 5%;
+}
+.createaccount .signup{
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    padding: 3%;
+    height: 40%;
+    font-size: 15px;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+.inputing input{
+    width: 100%;
+    height: 35px;
+    border: 1%;
+    padding: 3%;
+    border-radius: 3px;
+}
+
+.createaccount .alreadyacc{
+    margin-top: 20px;
+    text-align: center;
+   
+}

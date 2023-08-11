@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your active plan</title>
+        <link rel="stylesheet" href="details.css">
+    </head>
+    <body>
+        <div class="outer">
+        <div class="box1">
+            <label class="current" id="current"><b>Current Plan Details</b></label>
+            <label class="active" id="active">Active</label>
+            <button type="button" id="cancel"    class="cancel" onclick="Cancel()"><b>Cancel</b></button>
+        </div>
+        <div class="box2">
+            <label class="plan" id="plan">Basic </label><br>
+            <label class="phone" id="phone">Phone+Tablet</label><br>
+            <label class="price" id="price"><b>₹100/yr</b></label><br>
+            <button type="button" id="change"    class="change" onclick="changeplan()">Change Plan</button><br>
+            <p class="Details" id="Details">Your Subscription has started on July 11th,2022 and will auto renew on July 12th,2023</p>
+        </div>
+    </div>
+        
+    <script>
+        var x = document.getElementById("change");
+        function changeplan(){
+            window.location.assign("planselection.html")
+        }
+
+        var y = document.getElementById("cancel");
+        var z = document.getElementById("active");
+        var i = document.getElementById("Details");
+        function Cancel(){
+            alert("Your Subscription is cancelled");
+            y.style.display='none';
+            z.innerHTML="Cancelled";
+            z.style.color='red';
+            i.innerHTML="Your Subscription was cancelled and you will loose access to services on 11th july";
+        }
+
+    </script>
+
+
+    </body>
+</html>

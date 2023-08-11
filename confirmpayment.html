@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirm Payment</title>
+        <link rel="stylesheet" href="confirm.css">
+    </head>
+    <body>
+        <div class="outerbox">
+            <div class="row1">
+                <div class="col1"> 
+                    <h2>Complete Payment</h2>
+                    <p>Enter your credit or debit card details below</p>
+                    <div class="cards">
+                    <input type="text" class="card" placeholder="Card Number" required> 
+                    <input type="month" class="mnth"  placeholder="month" required>
+                    <input type="cvv" class="cvv" placeholder="CVV" maxlength="3" minlength="3" required>
+                    </div>
+                    <button type="submit" id="cnfrm" class="cnfrm">Confirm Payment</button>
+                </div>
+                <div class="col1"> 
+                    <h2>Order Summary </h2>
+                    <table>
+                        <tr>
+                            <td>Plan Name</td>
+                            <td><span id="basic" ></span></td>
+                        </tr>
+                        <tr>
+                            <td>Billing Cycle</td>
+                            <td><span id="mnthyear" ></span></td>
+                        </tr>
+                        <tr>
+                            <td>Plan Price</td>
+                            <td> <span id="price" ></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const name = localStorage.getItem('plan-name');
+        const cycle= localStorage.getItem('plan-cycle');
+        const price =localStorage.getItem('plan-price');
+        console.log(name ,price,cycle);
+        document.getElementById("basic").textContent = name;
+        document.getElementById("mnthyear").textContent = cycle;
+        document.getElementById("price").textContent = price;
+
+    </script>
+</html>

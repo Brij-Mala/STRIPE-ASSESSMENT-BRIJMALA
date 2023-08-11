@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(73, 73, 246);
+}
+.outerbox{
+    margin-top: 100px;
+    background-color: aliceblue;
+    width: 1000px;
+    padding: 15px;
+}
+.col1{
+
+    background-color: white;
+    float: left;
+    width: 50%;
+}
+.cards{
+    background-color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: fit-content;
+}
+.card,.mnth,.cvv{
+    border: none;
+    background: transparent;
+    height: 100%;
+    width: fit-content;
+
+}
+.cvv{
+    width:80px;
+}
+.cnfrm{
+    margin-top: 40px;
+    text-align: center;
+    padding: 3%;
+    font-size: 15px;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 5px;
+}
+table{
+
+    width: 60%;
+    color: rgba(41, 44, 41, 0.863);
+}
+th{
+    height: 50px;
+    border-bottom: 3px solid #0a0a0a48;
+}
+tr{
+    height: 50px;
+}
+td{
+    text-align: left ;
+    border-bottom: 3px solid #dddddd48;
+}
